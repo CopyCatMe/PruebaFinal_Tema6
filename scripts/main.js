@@ -1,4 +1,9 @@
-import { quitModal } from './modal.js';
+import { quitModal, openModal } from './modal.js';
 
-// Ejecutar la funcion cuando el DOM este cargado
+export function mostrarCartas() {
+    const pair = document.getElementById('pair').value;
+}
+
+// Ejecutar la funcion cuando el DOM este cargado, y poder abrir y cerrar el modal.
 document.addEventListener('DOMContentLoaded', quitModal);
+document.addEventListener('DOMContentLoaded', openModal);
