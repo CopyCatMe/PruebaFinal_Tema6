@@ -7,7 +7,7 @@ export function quitModal() {
     
     generateBoton.addEventListener('click', () => {
         modal.classList.add('modal-quit');
-        cards.style.display = 'grid';
+        cards.style.display = 'flex';
         setTimeout(() => {
             modal.style.display = 'none';
             modal.classList.remove('modal-quit');
