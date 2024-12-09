@@ -14,3 +14,7 @@ Este es un proyecto de un juego clásico de "Buscar la Pareja", en el que puedes
 - **HTML**: Para la estructura básica de la página y el juego.
 - **CSS**: Estilos y diseño responsivo, para que se vea bien en cualquier dispositivo.
 - **JavaScript**: Toda la lógica del juego, desde el manejo de las cartas hasta las animaciones.
+
+## Enlace Vercel para Live View
+
+[Live View](https://prueba-final-tema6.vercel.app/)
