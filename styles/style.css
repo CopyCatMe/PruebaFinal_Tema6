@@ -18,7 +18,14 @@
 body {
     height: 100vh;
     font-family: 'Inter', sans-serif;
+}
+
+.bodyBackground {
     background-color: #ddd;
+}
+
+.body.bodyColor {
+    background-color: #ffffff;
 }
 
 .container {
@@ -145,8 +152,8 @@ body {
 
 .modal {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 30%;
+    left: 23%;
     transform: translate(-50%, -50%);
     width: 55%;
     height: 40%;
@@ -157,10 +164,13 @@ body {
     border-radius: 30px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease-in-out;
+    animation: appear 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 .modal:hover {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    transform: scale(1.02);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .modal-content {
@@ -186,7 +196,6 @@ body {
     margin-bottom: 10px;
     margin-top: 10px;
     font-weight: bold;
-
 }
 
 .modal-content input {
@@ -222,25 +231,51 @@ body {
 .modal.modal-quit {
     opacity: 0;
     visibility: hidden;
+    animation: modal-quit 0.5s ease-in-out forwards;
 }
 
-.modal.modal-quit {
-    transform: translateY(-30px);
+@keyframes modal-quit {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.winModal {
+    position: absolute;
+    top: 30%;
+    left: 23%;
+    width: 55%;
+    height: 40%;
+    background-color: var(--modal-bg-color);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    animation: appear 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.winModal:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
 .cards {
     display: none;
     place-items: center;
-    gap: 1.5rem;
     margin: 0 auto;
     max-width: 100%;
 }
 
 .card {
-    /* max-width: 80vw;
-    max-height: 100vh; */
     max-width: 100%;
     margin: auto;
+    animation: appear 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -255,12 +290,52 @@ body {
     border-radius: 10px;
     margin: 5px;
     margin-top: 60px;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
 }
 
 .imagen:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease-in-out;
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+#temporizador {
+    display: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+    padding: 20px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    animation: appear 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    margin-top: 50px;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+}
+
+#temporizador:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.temporizador span {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 @media screen and (min-width: 700px) {
@@ -298,5 +373,4 @@ body {
         margin: 10px;
         margin-top: 60px;
     }
-    
 }

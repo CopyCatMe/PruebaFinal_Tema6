@@ -7,18 +7,21 @@
   <title>Diseño Moderno</title>
   <link rel="stylesheet" href="styles/style.css">
   <script type="module" src="scripts/main.js"></script>
-  <script type="module" src="scripts/modal.js"></script>
 </head>
 
-<body>
+<body class="bodyBackground">
   <header id="navbar">
     <nav class="navbar-container container">
       <a href="index.html" class="home-link">
         <div class="navbar-logo"><img src="imagenes/aafoloulogo.jpg" alt="Logo"></div>
         Encuentra las parejas
       </a>
-      <button type="button" id="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu"aria-expanded="false" onclick="window.location.href='index.html'">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" /></svg>
+      <button type="button" id="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu"
+        aria-expanded="false" onclick="window.location.href='index.html'">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+          <path
+            d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" />
+        </svg>
       </button>
       <div id="navbar-menu" aria-labelledby="navbar-toggle">
         <ul class="navbar-links">
@@ -28,20 +31,34 @@
     </nav>
   </header>
 
+  <div id="temporizador">
+    <span id="minutos">00</span>:<span id="segundos">00</span>
+  </div>
+
   <main>
     <div class="modal" id="modal">
       <div class="modal-content">
         <h2>¡Bienvenido!</h2>
         <label for="pair">Cantidad de parejas:</label>
-        <input type="number" id="pair" name="pair" min="1" max="20" value="2" oninput="if(value<2)value=2;if(value>20)value=20">
+        <input type="number" id="pair" name="pair" min="1" max="20" value="2"
+          oninput="if(value<2)value=2;if(value>20)value=20">
         <button id="generate">Generar parejas</button>
       </div>
     </div>
+
+    <div class="winModal" id="winModal">
+      <div class="modal-content">
+        <h2 id="winTime"></h2>
+        <button id="quit">Salir</button>
+      </div>
+    </div>
+
   </main>
 
   <section class="cards" id="cards">
-      <div class="card" id="card">
-      </div>
+    <div class="card" id="card">
+
+    </div>
   </section>
 </body>
 
